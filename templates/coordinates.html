@@ -1,0 +1,11 @@
+{{define "coordinates"}}
+<div class="grid grid-cols-3 gap-4">
+    <h2 class="font-semibold mb-2">Hole {{ . }}</h2>
+    <label class="block mb-1">Latitude:
+      <input type="text" name="hole{{ . }}_lat" class="border p-2 w-full">
+    </label>
+    <label class="block mb-1">Longitude:
+      <input type="text" name="hole{{ . }}_lng" class="border p-2 w-full">
+    </label>
+</div>
+{{end}}
