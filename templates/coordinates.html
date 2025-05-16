@@ -1,11 +1,25 @@
 {{define "coordinates"}}
-<div class="grid grid-cols-3 gap-4">
-    <h2 class="font-semibold mb-2">Hole {{ . }}</h2>
-    <label class="block mb-1">Latitude:
-      <input type="text" name="hole{{ . }}_lat" class="border p-2 w-full">
+<div class="grid grid-cols-5 gap-4 items-start border p-4 mb-4 rounded-lg bg-white shadow">
+    <h2 class="font-semibold col-span-1 mt-2">Hole {{ . }}</h2>
+  
+    <label class="block col-span-1">
+      <span class="text-sm text-gray-700">Tee Box Latitude:</span>
+      <input type="text" name="hole{{ . }}_lat_tee" class="border p-2 w-full rounded" />
     </label>
-    <label class="block mb-1">Longitude:
-      <input type="text" name="hole{{ . }}_lng" class="border p-2 w-full">
+  
+    <label class="block col-span-1">
+      <span class="text-sm text-gray-700">Tee Box Longitude:</span>
+      <input type="text" name="hole{{ . }}_lng_tee" class="border p-2 w-full rounded" />
     </label>
-</div>
+  
+    <label class="block col-span-1">
+      <span class="text-sm text-green-700">Green Latitude:</span>
+      <input type="text" name="hole{{ . }}_lat_green" class="border p-2 w-full rounded" />
+    </label>
+  
+    <label class="block col-span-1">
+      <span class="text-sm text-green-700">Green Longitude:</span>
+      <input type="text" name="hole{{ . }}_lng_green" class="border p-2 w-full rounded" />
+    </label>
+  </div>  
 {{end}}
