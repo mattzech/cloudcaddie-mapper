@@ -1,11 +1,10 @@
 {{define "form"}}
-<form hx-post="/generate" hx-target="#result" class="space-y-4">
-  {{ range .HoleCount}}
-    {{template "coordinates" . }}
+<form method="POST" action="/generate" target="_blank" class="space-y-4">
+  <input type="hidden" name="num_holes" value="{{len .HoleCount}}">
+  {{ range .HoleCount }}
+    {{ template "coordinates" . }}
   {{ end }}
 
   <button type="submit" class="mt-4 bg-black text-white px-4 py-2 rounded">Generate JSON</button>
 </form>
-
-<div id="result" class="mt-6"></div>
 {{end}}

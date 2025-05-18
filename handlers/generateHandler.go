@@ -55,7 +55,11 @@ func GenerateHandler(templates *template.Template) http.HandlerFunc {
             Holes:      holes,
         }
 
-        w.Header().Set("Content-Type", "application/json")
-        json.NewEncoder(w).Encode(course)
+        w.Header().Set("Content-Disposition", "attachment; filename=course.json")
+	    w.Header().Set("Content-Type", "application/json")
+
+        if err := json.NewEncoder(w).Encode(course); err != nil {
+            http.Error(w, "Failed to encode JSON", http.StatusInternalServerError)
+        }
     }       
 }
